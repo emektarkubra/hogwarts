@@ -1,0 +1,56 @@
+body {
+    background-color: black;
+    /* display: flex; */
+    /* justify-content:space-evenly; */
+}
+
+.container {
+    display: flex;
+    justify-content:space-evenly;
+}
+
+
+#characters {
+    border: 2px solid white;
+    width: 300px;
+    height: 400px;
+    display: inline-block; 
+    margin-top: 120px; 
+}
+
+#characters:hover {
+    box-shadow: 1px 1px 15px 1px white;
+}
+
+#sorting-hat {
+    border: 2px solid white;
+    width: 300px;
+    height: 400px;
+    display: inline-block;
+    margin-top: 120px;
+}
+#sorting-hat:hover {
+    box-shadow: 1px 1px 15px 1px white;
+}
+#spells {
+    border: 2px solid white;
+    width: 300px;
+    height: 400px;
+    display: inline-block;
+    margin-top: 120px;
+}
+#spells:hover {
+    box-shadow: 1px 1px 15px 1px white;
+}
+#houses {
+    border: 2px solid white;
+    width: 300px;
+    height: 400px;
+    display: inline-block;
+    margin-top: 120px;
+}
+#houses:hover {
+    box-shadow: 1px 1px 15px 1px white;
+}
+
+
