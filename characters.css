@@ -2,6 +2,12 @@ body {
    background-color: black;
 }
 
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .heading{
     /* border: 1px solid red; */
     color: white;
@@ -9,15 +15,19 @@ body {
     font-size: 30px;
     font-family:cursive;
     margin-top: 50px;
+    width: 50%;
 }
 
 .filter {
     margin-top: 50px;
     margin-bottom: 50px;
+    /* text-align: center; */
+    width: 90%;
+    /* border: 1px solid red; */
 }
 
 input[type=text]{
-    width: 400px;
+    width: 35%;
     height: 30px;
     background-color: rgba(20, 20, 20, 0.452);
     border: 1px solid rgb(20, 20, 20);
@@ -42,8 +52,8 @@ input[type=button]{
 .character {
     border: 1px solid white;
     background-color: rgba(14, 13, 13);
-    /* width: 1000px; */
-    width: 345px;
+    width: 1000px;
+    /* width: 345px; */
     height: 450px;
     border-radius: 10px;
     transition-property:width;
@@ -52,16 +62,17 @@ input[type=button]{
     margin-bottom: 25px;
     text-align: center;
     display: grid;
-    grid-template: 100px 300px / 200px 200px 500px;
+    grid-template: 100px 300px / 200px 200px 50px 200px;
     grid-template-areas: 
-    "A A D E"
-    "B C D E";
+    "A A D E F G"
+    "B C D E F G";
 
 }
 
-.character:hover {
+/* .character:hover {
     width: 1000px;
-}
+} */
+
 
 .name {
     /* border: 1px solid hotpink; */
@@ -76,7 +87,7 @@ input[type=button]{
     grid-area: A;
 }
 
-.img {
+.imgBox {
     border: 1px solid white;
     width: 250px;
     height: 250px;
@@ -84,6 +95,16 @@ input[type=button]{
     display: inline-block;
     grid-area: B;
 }
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+.house-img {
+    width: 100%;
+    height: 100%;
+}
+
 
 .vertical-line {
     border-left:1px solid white;
@@ -96,7 +117,7 @@ input[type=button]{
     
 }
 
-.inform {
+.inform1 {
     /* border: 1px solid orangered; */
     width: 250px;
     height: 410px;
@@ -104,34 +125,43 @@ input[type=button]{
     grid-area: D;
 }
 
-.house {
-    border: 1px solid red;
+.inform2 {
     width: 250px;
-    height: 250px;
-    margin-left: -200px;
-    margin-top: 90px;
-    grid-area: E;
+    height: 410px;
+    margin-top: 20px;
+    grid-area:F;
+    /* justify-content: center; */
+}
+
+.house {
+    /* border: 1px solid red; */
+    width: 80px;
+    height: 80px;
+    margin-left: 18px;
+    /* margin-top: 90px; */
+    grid-area: G;
+    border-radius: 5px;
 }
 
 table {
     font-family:cursive;
     border-collapse:collapse;
     font-size: 12px;
-    width: 100%;
+    width: 90%;
     height: 100%;
 }
   
-td {
+table td {
     border-bottom: 1px solid rgb(41, 39, 39);
     background-color: rgb(14, 13, 13);
     width: 10%;
     color: white;
-    text-align: center;
-    padding: 6px;
+    text-align: left;
+    padding: 3px !important;
 
 }
   
-tr {
+table tr {
     background-color: #dddddd;
 }
 
