@@ -9,7 +9,6 @@ body {
 }
 
 .heading{
-    /* border: 1px solid red; */
     color: white;
     text-align: center;
     font-size: 30px;
@@ -21,9 +20,7 @@ body {
 .filter {
     margin-top: 50px;
     margin-bottom: 50px;
-    /* text-align: center; */
     width: 90%;
-    /* border: 1px solid red; */
 }
 
 input[type=text]{
@@ -45,62 +42,126 @@ input[type=button]{
 }
 
 .card-header {
-    /* border: 1px solid red; */
     text-align: center;
 }
 
 .character {
     border: 1px solid white;
     background-color: rgba(14, 13, 13);
-    width: 1000px;
-    /* width: 345px; */
-    height: 450px;
-    border-radius: 10px;
-    transition-property:width;
-    transition-duration: 2s;
-    margin-left: 120px;
+    width: 350px;
+    height: 350px;
+    /* border-radius: 10px; */
     margin-bottom: 25px;
     text-align: center;
-    display: grid;
-    grid-template: 100px 300px / 200px 200px 50px 200px;
-    grid-template-areas: 
-    "A A D E F G"
-    "B C D E F G";
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* .character:hover {
-    width: 1000px;
-} */
+.card-body {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.character-tooltip {
+    border: 1px solid white;
+    background-color: rgba(14, 13, 13);
+    width: 90%;
+    height: 80%;
+    border-radius: 10px;
+    z-index: 2;
+    position: fixed;
+    align-self: center;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
+.tooltip-header {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tooltip-information {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+}
 
 .name {
-    /* border: 1px solid hotpink; */
-    height: 50px;
-    width: 345px;
+    /* border: 1px solid purple; */
+    height: 30px;
+    width: 90%;
+    color: white;
+    align-items: center;
+    font-size: 23px;
+    font-family: cursive;
+    display: inline;
+}
+
+.fa {
+    /* border: 1px solid purple; */
+    /* background-color: black; */
+    color: white;
+    margin-left: 328px;
+    /* font-size: 20px; */
+    width: 10px;
+    height: 10px;
+    /* border: 1px solid green; */
+}
+
+.tooltip-name {
     color: white;
     justify-content: center;
     align-items: center;
     font-size: 23px;
     font-family: cursive;
     display: inline-flex;
-    grid-area: A;
+    margin-bottom: 30px;
+    margin-top: 80px;
 }
+
+
 
 .imgBox {
     border: 1px solid white;
-    width: 250px;
-    height: 250px;
-    margin-left: 50px;
-    display: inline-block;
-    grid-area: B;
+    width: 60%;
+    height: 60%;
+}
+
+.tooltip-imgBox {
+    border: 1px solid white;
+    width: 80%;
+    height: 40%;
+    align-self: center;
+    border-radius: 5px;
 }
 
 .img {
     width: 100%;
     height: 100%;
 }
+
+.tooltip-img {
+    width: 100%;
+    height: 100%;
+}
 .house-img {
+    border-radius: 10px;
     width: 100%;
     height: 100%;
 }
@@ -108,56 +169,48 @@ input[type=button]{
 
 .vertical-line {
     border-left:1px solid white;
-    height: 380px;
-    margin-left: 145px;
-    margin-top: -70px;
-    /* margin-bottom: 15px; */
-    /* margin-top: 25px; */
-    grid-area: C;
+    height: 480px;
+    margin-right: 25px;
+    margin-top: 27px;
     
 }
 
 .inform1 {
-    /* border: 1px solid orangered; */
-    width: 250px;
-    height: 410px;
+    width: 100%;
+    height:90%;
     margin-top: 20px;
-    grid-area: D;
+    margin-right: 60px;
+
 }
 
 .inform2 {
-    width: 250px;
-    height: 410px;
+    width: 100%;
+    height:90%;
     margin-top: 20px;
-    grid-area:F;
-    /* justify-content: center; */
+    margin-right: 60px;
 }
 
 .house {
-    /* border: 1px solid red; */
-    width: 80px;
-    height: 80px;
-    margin-left: 18px;
-    /* margin-top: 90px; */
-    grid-area: G;
-    border-radius: 5px;
+    width: 40%;
+    height: 20%;
+    border-radius: 10px;
+    margin-right: -5px;
 }
 
 table {
     font-family:cursive;
     border-collapse:collapse;
     font-size: 12px;
-    width: 90%;
+    width: 100%;
     height: 100%;
 }
   
 table td {
     border-bottom: 1px solid rgb(41, 39, 39);
     background-color: rgb(14, 13, 13);
-    width: 10%;
     color: white;
     text-align: left;
-    padding: 3px !important;
+    padding: 3px;
 
 }
   
