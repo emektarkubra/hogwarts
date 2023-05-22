@@ -1,20 +1,13 @@
 body {
    background-color: black;
+   position: relative;
+  
 }
 
 .card-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.heading{
-    color: white;
-    text-align: center;
-    font-size: 30px;
-    font-family:cursive;
-    margin-top: 50px;
-    width: 50%;
 }
 
 .filter {
@@ -24,7 +17,8 @@ body {
 }
 
 input[type=text]{
-    width: 35%;
+    width: 50%;
+    max-width: 90%;
     height: 30px;
     background-color: rgba(20, 20, 20, 0.452);
     border: 1px solid rgb(20, 20, 20);
@@ -33,12 +27,7 @@ input[type=text]{
     font-size: 18px;
     font-family: cursive;
     margin-right: 5px;
-}
-
-input[type=button]{
-    height: 35px;
-    background-color: rgb(20, 20, 20) ;
-    color: white;
+    border-radius: 10px;
 }
 
 .card-header {
@@ -48,23 +37,28 @@ input[type=button]{
 .character {
     border: 1px solid white;
     background-color: rgba(14, 13, 13);
-    width: 350px;
+    width: 28%;
     height: 350px;
-    /* border-radius: 10px; */
-    margin-bottom: 25px;
+    border-radius: 5px;
+    margin-bottom: 35px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+
 .card-body {
+    /* border: 1px solid red; */
+    width: 90%;
+    align-self: center;
     z-index: 1;
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
     flex-wrap: wrap;
+    
 }
 
 body {
@@ -75,19 +69,25 @@ body {
 .character-tooltip {
     border: 1px solid white;
     background-color: rgba(14, 13, 13);
-    width: 90%;
-    height: 80%;
+    box-shadow: 1px 1px 20px 1px rgb(247, 230, 230);
+    width: 80%;
+    max-width: 90%;
+    height: 75%;
     border-radius: 10px;
     z-index: 2;
-    position: fixed;
+    position:fixed;
     align-self: center;
-    margin-top: 80px;
+    /* margin-top: 80px; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+      /* margin: auto; */
+    left: 10%;
+    top: 10%;
+    /* border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent; */
 }
-
-
 
 .tooltip-header {
     width: 25%;
@@ -99,29 +99,25 @@ body {
 .tooltip-information {
     display: flex;
     flex-direction: row;
-    width: 70%;
+    max-width: 70%;
 }
 
 .name {
-    /* border: 1px solid purple; */
     height: 30px;
     width: 90%;
     color: white;
     align-items: center;
     font-size: 23px;
-    font-family: cursive;
+    font-family: Copperplate, Papyrus, fantasy;
     display: inline;
 }
 
 .fa {
-    /* border: 1px solid purple; */
-    /* background-color: black; */
     color: white;
-    margin-left: 328px;
-    /* font-size: 20px; */
+    margin-left: 298px;
     width: 10px;
     height: 10px;
-    /* border: 1px solid green; */
+    font-size: 18px;
 }
 
 .tooltip-name {
@@ -129,7 +125,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 23px;
-    font-family: cursive;
+    font-family: Copperplate, Papyrus, fantasy;
     display: inline-flex;
     margin-bottom: 30px;
     margin-top: 80px;
@@ -139,14 +135,15 @@ body {
 
 .imgBox {
     border: 1px solid white;
+    border-radius: 10px;
     width: 60%;
     height: 60%;
 }
 
 .tooltip-imgBox {
     border: 1px solid white;
-    width: 80%;
-    height: 40%;
+    max-width: 80%;  
+    max-height: 40%;
     align-self: center;
     border-radius: 5px;
 }
@@ -154,22 +151,19 @@ body {
 .img {
     width: 100%;
     height: 100%;
+    border-radius: 10px;
 }
 
 .tooltip-img {
     width: 100%;
     height: 100%;
 }
-.house-img {
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
-}
+
 
 
 .vertical-line {
     border-left:1px solid white;
-    height: 480px;
+    height: 90%;
     margin-right: 25px;
     margin-top: 27px;
     
@@ -180,6 +174,7 @@ body {
     height:90%;
     margin-top: 20px;
     margin-right: 60px;
+   
 
 }
 
@@ -194,7 +189,12 @@ body {
     width: 40%;
     height: 20%;
     border-radius: 10px;
-    margin-right: -5px;
+}
+
+.house-img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
 }
 
 table {
@@ -214,8 +214,20 @@ table td {
 
 }
   
-table tr {
-    background-color: #dddddd;
+
+@media (max-width: 600px){
+    .character-tooltip {
+        padding-bottom: 10px;
+    }
+    .tooltip-information {
+        flex-wrap: wrap;
+        height: 45%;
+    }
+    .house-img {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: auto;
+    }
 }
 
 

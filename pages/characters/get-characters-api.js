@@ -17,63 +17,63 @@ function getData(url) {
 }
 
 
-getData(`https://hp-api.onrender.com/api/characters/students`)
-    .then((students) => {
-        createCharacter(students);
+getData(`https://hp-api.onrender.com/api/characters`)
+    .then((characters) => {
+        createCharacter(characters);
     })
     .catch((err) => {
         console.log(err);
     })
 
 
-function createCharacter(students) {
-    students.forEach(student => {
+function createCharacter(characters) {
+    characters.forEach(character => {
 
-        if (student.wizard) {
-            student.wizard = `✓`;
+        if (character.wizard) {
+            character.wizard = `✓`;
         } else {
-            student.wizard = `X`;
+            character.wizard = `X`;
         }
 
-        if (student.hogwartsStudent) {
-            student.hogwartsStudent = `✓`;
+        if (character.hogwartsStudent) {
+            character.hogwartsStudent = `✓`;
         } else {
-            student.hogwartsStudent = `X`;
+            character.hogwartsStudent = `X`;
         }
 
-        if (student.alive) {
-            student.alive = `✓`;
+        if (character.alive) {
+            character.alive = `✓`;
         } else {
-            student.alive = `X`;
+            character.alive = `X`;
         }
 
-        if (student.alternate_names.length == 0) {
-            student.alternate_names = "—";
+        if (character.alternate_names.length == 0) {
+            character.alternate_names = "—";
         }
-        if (student.dateOfBirth == null) {
-            student.dateOfBirth = "—";
+        if (character.dateOfBirth == null) {
+            character.dateOfBirth = "—";
         }
-        if (student.ancestry == "") {
-            student.ancestry = "—";
+        if (character.ancestry == "") {
+            character.ancestry = "—";
         }
 
-        if (student.eyeColour == "") {
-            student.eyeColour = "—";
+        if (character.eyeColour == "") {
+            character.eyeColour = "—";
         }
-        if (student.hairColour == "") {
-            student.hairColour = "—";
+        if (character.hairColour == "") {
+            character.hairColour = "—";
         }
-        if (student.wand.wood == "") {
-            student.wand.wood = "—";
+        if (character.wand.wood == "") {
+            character.wand.wood = "—";
         }
-        if (student.patronus == "") {
-            student.patronus = "—";
+        if (character.patronus == "") {
+            character.patronus = "—";
         }
-        if (student.actor == "") {
-            student.actor = "—";
+        if (character.actor == "") {
+            character.actor = "—";
         }
-        if (student.house == "") {
-            student.house = "—";
+        if (character.house == "") {
+            character.house = "—";
         }
 
         const cardBody = document.querySelector(".card-body");
@@ -85,20 +85,21 @@ function createCharacter(students) {
         a.href = "#";
 
         const icon = document.createElement("i");
-        icon.className = "fa fa-th-large";
+        icon.className = "fa fa-plus-square";
 
         const characterName = document.createElement("h1");
         characterName.className = "name";
-        characterName.textContent = student.name;
+        characterName.textContent = character.name;
 
         const imgBox = document.createElement("div");
         imgBox.className = "imgBox";
+        imgBox.setAttribute("characterId", `${character.id}`)
 
         const img = document.createElement("img");
         img.className = "img";
-        img.src = student.image;
-        if (student.image == "") {
-            img.src = "img/poster.jpg";
+        img.src = character.image;
+        if (character.image == "") {
+            img.src = "/img/poster.jpg";
         }
         img.alt = "Image not found";
 
@@ -111,7 +112,6 @@ function createCharacter(students) {
 
         icon.addEventListener("click", createTooltip);
 
-
         function createTooltip(e) {
 
             const characterTooltip = document.createElement("div");
@@ -122,18 +122,18 @@ function createCharacter(students) {
 
             const tooltipName = document.createElement("h1");
             tooltipName.className = "tooltip-name";
-            tooltipName.textContent = student.name;
+            tooltipName.textContent = character.name;
 
             const tooltipImgBox = document.createElement("div");
             tooltipImgBox.className = "tooltip-imgBox";
 
             const tooltipImg = document.createElement("img");
             tooltipImg.className = "tooltip-img";
-            tooltipImg.src = student.image;
-            if (student.image == "") {
-                tooltipImg.src = "img/poster.jpg";
+            tooltipImg.src = character.image;
+            if (character.image == "") {
+                tooltipImg.src = "/img/poster.jpg";
             }
-            tooltipImg.alt = "Image not found";
+            tooltipImg.alt = "image not found";
 
             const verticalLine = document.createElement("div");
             verticalLine.className = "vertical-line";
@@ -148,31 +148,31 @@ function createCharacter(students) {
             <table>
                     <tr>
                         <td>Alternate-name:</td>
-                        <td>${student.alternate_names}</td>
+                        <td>${character.alternate_names}</td>
                     </tr>
                     <tr>
-                        <td>Species</td>
-                        <td>${student.species}</td>
+                        <td>Species:</td>
+                        <td>${character.species}</td>
                     </tr>
                     <tr>
                         <td>Gender:</td>
-                        <td>${student.gender}</td>
+                        <td>${character.gender}</td>
                     </tr>
                     <tr>
                         <td>House:</td>
-                        <td>${student.house}</td>
+                        <td>${character.house}</td>
                     </tr>
                     <tr>
                         <td>Birthday:</td>
-                        <td>${student.dateOfBirth}</td>
+                        <td>${character.dateOfBirth}</td>
                     </tr>
                     <tr>
-                        <td>Wizard</td>
-                        <td>${student.wizard}</td>
+                        <td>Wizard:</td>
+                        <td>${character.wizard}</td>
                     </tr>
                     <tr>
                         <td>Ancestry:</td>
-                        <td>${student.ancestry}</td>
+                        <td>${character.ancestry}</td>
                     </tr>
                 </table>
             
@@ -186,31 +186,31 @@ function createCharacter(students) {
             <table>
                     <tr>
                         <td>Eye-color:</td>
-                        <td>${student.eyeColour}</td>
+                        <td>${character.eyeColour}</td>
                     </tr>
                     <tr>
                         <td>Hair-color:</td>
-                        <td>${student.hairColour}</td>
+                        <td>${character.hairColour}</td>
                     </tr>
                     <tr>
                         <td>Wand-wood:</td>
-                        <td>${student.wand.wood}</td>
+                        <td>${character.wand.wood}</td>
                     </tr>
                     <tr>
                         <td>Patronus:</td>
-                        <td>${student.patronus}</td>
+                        <td>${character.patronus}</td>
                     </tr>
                     <tr>
                         <td>Hogwarts-student:</td>
-                        <td>${student.hogwartsStudent}</td>
+                        <td>${character.hogwartsStudent}</td>
                     </tr>
                     <tr>
                         <td>Actor:</td>
-                        <td>${student.actor}</td>
+                        <td>${character.actor}</td>
                     </tr>
                     <tr>
                         <td>Alive:</td>
-                        <td>${student.alive}</td>
+                        <td>${character.alive}</td>
                     </tr>
 
                 </table>
@@ -222,17 +222,17 @@ function createCharacter(students) {
 
             const houseImg = document.createElement("img");
             houseImg.className = "house-img";
-            houseImg.alt = "Image not found";
-            if (student.house == "Gryffindor") {
-                houseImg.src = "img/gryffindor.jpg";
-            } else if (student.house == "Slytherin") {
-                houseImg.src = "img/slytherin.jpg"
-            } else if (student.house == "Hufflepuff") {
-                houseImg.src = "img/hufflepuff.webp";
-            } else if (student.house == "Ravenclaw") {
-                houseImg.src = "img/ravenclaw.webp";
+            houseImg.alt = "image not found";
+            if (character.house == "Gryffindor") {
+                houseImg.src = "/img/gryffindor.jpg";
+            } else if (character.house == "Slytherin") {
+                houseImg.src = "/img/slytherin.jpg"
+            } else if (character.house == "Hufflepuff") {
+                houseImg.src = "/img/hufflepuff.webp";
+            } else if (character.house == "Ravenclaw") {
+                houseImg.src = "/img/ravenclaw.webp";
             } else {
-                houseImg.src = "img/houses.webp";
+                houseImg.src = "/img/houses.webp";
             }
 
             document.body.appendChild(characterTooltip);
@@ -248,19 +248,29 @@ function createCharacter(students) {
             houseBox.appendChild(houseImg);
 
 
-            document.addEventListener("keyup", removeTooltip);
+            characterTooltip.addEventListener("click", removeTooltip);
 
             function removeTooltip(e) {
                 characterTooltip.remove();
+
             }
 
 
         }
 
 
+        const filterInput = document.querySelector("#filter-input");
+        filterInput.addEventListener("keyup", filterStudent);
+
+        function filterStudent(e) {
+            filterName = e.target.value.toLowerCase().trim();
+            if ((character.name.toLowerCase().trim()).includes(filterName)) {
+                characterBox.setAttribute("style", "display:flex");
+            } else {
+                characterBox.setAttribute("style", "display:none");
+            }
+        }
 
     });
-
-
 
 }
