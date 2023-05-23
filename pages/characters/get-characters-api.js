@@ -81,13 +81,7 @@ function createCharacter(characters) {
         const characterBox = document.createElement("div");
         characterBox.className = "character";
 
-        const a = document.createElement("a");
-        a.href = "#";
-
-        const icon = document.createElement("i");
-        icon.className = "fa fa-plus-square";
-
-        const characterName = document.createElement("h1");
+        const characterName = document.createElement("h3");
         characterName.className = "name";
         characterName.textContent = character.name;
 
@@ -104,13 +98,11 @@ function createCharacter(characters) {
         img.alt = "Image not found";
 
         cardBody.appendChild(characterBox);
-        characterBox.appendChild(a);
-        a.appendChild(icon);
         characterBox.appendChild(characterName);
         characterBox.appendChild(imgBox);
         imgBox.appendChild(img);
 
-        icon.addEventListener("click", createTooltip);
+        imgBox.addEventListener("click", createTooltip);
 
         function createTooltip(e) {
 

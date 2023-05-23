@@ -19,56 +19,29 @@ function getData(url) {
 
 getData("https://hp-api.onrender.com/api/spells")
     .then((spells) => {
-        // console.log(spells);
         createSpells(spells);
     })
     .catch((err) => {
         console.log(err);
     })
 
+
 function createSpells(spells) {
-
     spells.forEach(spell => {
+        const tooltip = document.createElement("div");
+        tooltip.className = "tooltip";
+
+        const spellName = document.createElement("div");
+        spellName.className = "spell-name";
+        spellName.textContent = spell.name;
+
+        const tooltipText = document.createElement("span");
+        tooltipText.className = "tooltiptext";
+        tooltipText.textContent = spell.description;
+
         const container = document.querySelector(".container");
-        let spellBox = document.createElement("div");
-        spellBox.className = "spell-name";
-        spellBox.textContent = spell.name;
-        container.appendChild(spellBox);
-
-
-
-        spellBox.addEventListener("click", (e) => {
-            const tooltipBox = document.createElement("div");
-            tooltipBox.className = "tooltip";
-
-            const a = document.createElement("a");
-            a.href = "#";
-
-            const closeIcon = document.createElement("i");
-            closeIcon.className = "fa fa-close";
-
-            const description = document.createElement("p");
-            description.className = "spell-desciption";
-            description.textContent = spell.description;
-
-            tooltipBox.appendChild(a);
-            a.appendChild(closeIcon);
-            tooltipBox.appendChild(description);
-            document.body.appendChild(tooltipBox);
-
-
-
-            closeIcon.addEventListener("click", (e) => {
-                tooltipBox.remove();
-            })
-
-        })
-
-
-
-
-
-
-
+        tooltip.appendChild(spellName);
+        tooltip.appendChild(tooltipText);
+        container.appendChild(tooltip);
     });
 }
