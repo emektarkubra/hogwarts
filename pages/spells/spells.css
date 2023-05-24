@@ -76,6 +76,7 @@ img {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
+    cursor:pointer;
 }
   
 .tooltiptext {
@@ -86,6 +87,7 @@ img {
     color: black;
     font-family: Copperplate, Papyrus, fantasy;
     font-weight: bold;
+    font-size: 18px;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;

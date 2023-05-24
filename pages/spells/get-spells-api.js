@@ -28,12 +28,14 @@ getData("https://hp-api.onrender.com/api/spells")
 
 function createSpells(spells) {
     spells.forEach(spell => {
+
         const tooltip = document.createElement("div");
         tooltip.className = "tooltip";
 
         const spellName = document.createElement("div");
         spellName.className = "spell-name";
         spellName.textContent = spell.name;
+        spellName.setAttribute("spellId", spell.id);
 
         const tooltipText = document.createElement("span");
         tooltipText.className = "tooltiptext";

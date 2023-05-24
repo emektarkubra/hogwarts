@@ -87,6 +87,7 @@ input[type=text]::placeholder {
     border-radius: 150px;
     width: 250px;
     height: 250px;
+    cursor:pointer;
 }
 
 .imgBox:hover {
@@ -116,6 +117,7 @@ input[type=text]::placeholder {
     justify-content: space-around;
     left: 10%;
     top: 10%;
+    cursor:pointer;
 }
 
 .tooltip-header {
