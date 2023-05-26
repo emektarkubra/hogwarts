@@ -4,7 +4,7 @@ let data = {
     born leader, often taking control of the reins from others whose recklessness or dedication 
     to facts and knowledge clouds their judgment. You are intelligent, but acknowledge that 
     there are more important things in life, and therefore aim to use your intelligence and 
-    therefore aim to use your intelligence and determination to fight for what you believe to be right.
+    determination to fight for what you believe to be right.
 
     Your slightly compatibility with Hufflepuff house suggests a deep love and appreciation  for those 
     close to you, which toy may keep hidden for fear of being hurt.`,
@@ -19,7 +19,7 @@ let data = {
     may manifet itself in a love of travel or trying new things.`,
 
     3: `You believe above all in the importance of wisdom, which is why you undoubtedly 
-    belong in Ravenclaw, but your sense of adventure means ypu may also have an affinity for Gryffindor house. 
+    belong in Ravenclaw, but your sense of adventure means you may also have an affinity for Gryffindor house. 
     You are a thrill-seeker- you love to travel and there's nothing more exciting to you than new experiences - 
     and believe that adventure is essential in the pursuit of knowledge. You are brave, but would never intentionally 
     put yourself in danger, placing you firmly in Ravenclaw.
@@ -34,7 +34,7 @@ let data = {
     openness is what originally attracts other people to you, but they stay for your unwavering loyalty, 
     meaning you're constantly surrounded by a large group of friends.
     
-    Your slight compatibility with Ravenclaw house hints at an appreciation for knowldge and wisdom, through 
+    Your slight compatibility with Ravenclaw house hints at an appreciation for knowledge and wisdom, through 
     they are not priorities for you.`
 }
 
@@ -98,7 +98,6 @@ function sortingHat(e) {
     houseContainer.appendChild(descriptionBox);
     descriptionBox.appendChild(title);
     descriptionBox.appendChild(text);
-
 
 
 
