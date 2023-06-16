@@ -46,10 +46,6 @@ input[type=text]{
     border-radius: 0.5vw;
 }
 
-input[type=text]::placeholder {
-    text-align: center;
-}
-
 .card-body {
     width: 90%;
     align-self: center;
