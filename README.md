@@ -7,12 +7,14 @@
 <video src="https://github.com/emektarkubra/hogwarts/assets/124355274/d49fb729-c876-44da-942b-d87d238c8560" controls="controls" >
 </video>
 
+![harry-potter](https://github.com/emektarkubra/hogwarts/assets/124355274/a5611184-e6b6-49df-94d4-de19d635bf43)
+
+
 ***
 
 ## 🛠️ Built With
 
 <img src="https://user-images.githubusercontent.com/114678694/193994738-32684660-7d82-48d5-8f5d-1f428fda1853.svg" width = "300px">
-
 
 ## 👩‍🎤 Harry Potter API
 
