@@ -21,7 +21,7 @@
 A Harry Potter Rest API that returns information about characters and spells and their description. 
 
 Visit the main page of this API (that comes by default with json-server): 
-https://hp-api.onrender.com/api/
+https://hp-api.onrender.com
 
 >No API key is required.
 
@@ -44,45 +44,6 @@ https://hp-api.onrender.com/api/characters/house/:house
 
 * all spells:
 https://hp-api.onrender.com/api/spells
-
-
-
-### How to use
-
-Here is a JavaScript example of fetching the entire API. Just change the URL or  endpoint for fetching different APIs
-
-```javascript
-
-function getData(url) {
-
-    return new Promise((resolve, reject) => {
-
-        fetch(url)
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                resolve(data);
-            })
-            .catch((err) => {
-                reject(err);
-            })
-    })
-}
-
-
-getData(`https://hp-api.onrender.com/api/characters`)
-    .then((characters) => {
-        console.log(characters)
-    })
-    .catch((err) => {
-        console.log(err);
-    })
-
-
-```
-
-
 
 ## 🚀 Getting Started
 
